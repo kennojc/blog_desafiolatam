@@ -3,9 +3,10 @@
 <br><br>
 
 <% @posts.each do |p|%>
-<ol>
+<ul>
     <li><%= p.title %> </li>
-    <li><%= p.image_url %> </li>
+    <li><%= p.created_at %> </li>
+    <li><%= image_tag(p.image_url)%> </li>
     <li><%= p.content %> </li>
-</ol>
+</ul>
 <%end%>
