@@ -3,10 +3,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(title: params[:title], image_url: params[:image_url], content: params[:content]) 
-    
-    unless @post.save 
-      redirect_to root_path
-    end
+    @post = Post.create(title: params[:title], image_url: params[:image_url], content: params[:content])    
   end
 end

@@ -1,6 +1,20 @@
-<h1>Este es el View del Create</h1>
-<h1>Guardado con Éxito</h1>
-<h3>Felicidades</h3>
+
+<% if @post.errors.any? %> 
+    <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> que no ha(n) dejado crear el Artículo</h2>
+    
+         <ul>
+             <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li> 
+            <% end %>
+        </ul>
+        <%= link_to "Inicio", root_path %>
+    </div>
+<% else %>
+    <h1> Artículo Ingresado </h1> 
+    <%= link_to "Inicio", root_path %>
+<% end %>
+ 
 
 
 
